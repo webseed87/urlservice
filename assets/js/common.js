@@ -50,11 +50,6 @@ $(document).ready(function(){
         var imageUrl = $ul.find('li').eq(currentIndex).find('img').attr('src');
         $(".img_popup_content").attr('src', imageUrl);
     
-        // Calculate the top position based on scroll
-        var scrollPosition = $(window).scrollTop();
-        $(".img_popup").css({
-            'top': 'calc(50% + ' + scrollPosition   + 'px)'
-        });
     
      
 
