@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <title>개인정보 신청 이력상세</title>
+</head>
+
+<body>
+    <header class="filter_img">
+        <nav>
+            <a href="fINF_UI_AIU_010.html">
+                <h1><img src="../assets/images/logo.svg" alt="AOS AI Model Service"><span>AOS AI Model Service</span>
+                </h1>
+            </a>
+        </nav>
+        <div class="top_title">
+            <h2>
+
+                개인정보 신청 이력상세
+            </h2>
+            <ul class="location">
+                <li> <a href="fINF_UI_AIU_010.html">
+                        <img src="../assets/images/home.svg"></a>
+                </li>
+                <li>
+                    <a href="">개인정보 필터</a>
+                </li>
+                <li>
+                    <a href=""> 개인정보 신청 이력</a>
+                </li>
+            </ul>
+        </div>
+        <div class="sub_menu">
+            <ul>
+                <!-- 현재 페이지에선 active 클래스를 붙여주세요 -->
+                <li class="active"><a href="fINF_UI_AIU_020.html"> 개인정보 신청 이력 </a></li>
+                <li><a href="fINF_UI_AIU_040.html"> 개인정보 신청</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="container">
+
+            <div class="detail_title">
+                <h3>테스트, 테스트 준비중입니다, 타이틀은 필수 값입니다. 타이틀은 필수 값입니다.</h3><span>신청일시: 2024.01.03 13:55:31</span>
+            </div>
+            <!-- 신청 정보 -->
+            <div class="detail_top_info">
+                <ul>
+                    <li><span class="title">사고접수번호</span><span>23134123412313</span></li>
+                    <li><span class="title">차량번호</span><span>11가 1111</span></li>
+                    <li><span class="title">차종</span><span>k5</span></li>
+                    <li><span class="title">사진수</span><span>3</span></li>
+                    <li><span class="title">담보</span><span>자차</span></li>
+                    <li><span class="title">서열</span><span>5</span></li>
+                </ul>
+            </div>
+            <div class="button_right_warp">
+                <ul class="button_list">
+                    <li><button class="black_button" id="selectAllButton_list">전체선택</button></li>
+                    <li><button class="red_button" id="clearAllButton_list">전체취소</button></li>
+
+                    <li> <button><img src="../assets/images/import.svg">다운로드</button> </li>
+                </ul>
+            </div>
+            <div class="filter_detail_warp">
+                <div class="filter_detail_before">
+                    <!-- 이미지 확대 기능이 필요하면 ul 태그에 클래스 img_expand만 붙여주세요 -->
+                    <ul class="img_expand">
+                        <li><img src="../assets/images/img1.png"></li>
+                        <li><img src="../assets/images/img2.png"></li>
+                        <li><img src="../assets/images/img3.png"></li>
+                        <li><img src="../assets/images/img4.png"></li>
+                        <li><img src="../assets/images/img5.png"></li>
+
+                    </ul>
+                </div>
+                <div class="filter_detail_after">
+                    <ul class="img_expand">
+                        <li>
+                            <input type="checkbox" class="bulr_checkbox itemCheckbox1">
+                            <img src="../assets/images/car1.png">
+                        </li>
+                        <li>
+                            <input type="checkbox" class="bulr_checkbox itemCheckbox1">
+                            <img src="../assets/images/car2.png">
+                        </li>
+                        <li>
+                            <input type="checkbox" class="bulr_checkbox itemCheckbox1">
+                            <img src="../assets/images/car3.png">
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <img src="../assets/images/b_logo.svg" alt="보험개발원">
+        <p>Copyright © <strong> AI Model Service</strong> All rights reserved.</p>
+    </footer>
+
+     <!-- 이미지 팝업부분 -->
+     <div class="popup_continer"></div>
+    <div class="img_popup">
+        <span class="img_close">&times;</span>
+        <img class="img_popup_content" src="">
+        <div class="pagenation">
+            <button class="prev_button defult_button">&lt;</button>
+            <button class="next_button defult_button">&gt;</button>
+        </div>
+
+    </div>
+    
+</body>
+
+</html>

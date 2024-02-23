@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <!-- <script src="../assets/js/common.js" defer></script> -->
+    <script src="../assets/js/upload.js" defer></script>
+    <title>표준견적 신청</title>
+</head>
+
+<body>
+    <header class="standard_img">
+        <nav>
+            <h1><img src="../assets/images/logo.svg" alt="AOS AI Model Service"><span>AOS AI Model Service</span></h1>
+        </nav>
+        <div class="top_title">
+            <h2>
+                <span>표준 견적</span>
+                표준견적 신청
+            </h2>
+        </div>
+    </header>
+    <div class="content">
+        <div class="container">
+            <div class="detail_info">
+                <h4>표준검색 필터 항목</h4>
+                <ul>
+                    <li><label class="requirement">보험사</label>
+                        <select>
+                            <option>현대해상</option>
+                            <option>메리츠화재</option>
+                        </select>
+                    </li>
+                    <li><label class="requirement">지역</label>
+                        <select>
+                            <option>서울</option>
+                            <option>경기</option>
+                        </select>
+                    </li>
+                    <li><label class="requirement">제조사</label>
+                        <select>
+                            <option>현대</option>
+                            <option>기아</option>
+                        </select>
+                    </li>
+                    <li><label class="requirement">차종</label>
+                        <select>
+                            <option>K5</option>
+                            <option>K7</option>
+                        </select>
+                    </li>
+                    <li><label class="requirement">차명</label>
+                        <select>
+                            <option>차명1</option>
+                            <option>차명2</option>
+                        </select>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="detail_info">
+                        <h4>표준검색 세부 항목</h4>
+                        <ul>
+                    <li><label>탈부착 작업시간</label>
+                        <select>
+                            <option>1시간</option>
+                            <option>2시간</option>
+                        </select>
+                    </li>
+                    <li><label>도장작업시간</label>
+                        <select>
+                            <option>1시간</option>
+                            <option>2시간</option>
+                        </select>
+                    </li>
+                    <li><label>도장타입</label>
+                        <select>
+                            <option>무광</option>
+                            <option>유광</option>
+                        </select>
+                    </li>
+                    <li><label>도장컬러</label>
+                        <select>
+                            <option>블랙</option>
+                            <option>그레이</option>
+                        </select>
+                    </li>
+                    <li><label>도장코트</label>
+                        <select>
+                            <option>CODE1</option>
+                            <option>CODE2</option>
+                        </select>
+                    </li>
+                    <li><label>최초등록일자</label>
+                        <input type="date">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="form">
+                <div class="img_upload">
+                    <div class="button_warp">
+                        <label class="button" for="fileElem"><img src="../assets/images/folder.svg">이미지 업로드</label>
+                    </div>
+                    <div id="drop-area">
+
+                        <form class="my-form">
+                            <p> <img src="../assets/images/upload_img.svg"></p>
+                            <p class="txt"> 파일을 마우스로 끌어오세요</p>
+                            <p class="sub_txt"> Supports: PNG, JPG, JPEG</p>
+                            <input type="file" id="fileElem" multiple accept="image/*"
+                                onchange="handleFiles(this.files)">
+
+                        </form>
+                       
+                        <div id="gallery"></div>
+                     
+                    </div>
+                    <div class="button_center_warp">
+                        <button class="full"><img src="../assets/images/document-filter.svg">대표 견적 검색</button>
+                    </div>
+                </div>
+            </div>
+
+           <div class="standard_chart">
+            <h4>표준견적</h4>
+           </div>
+
+        </div>
+    </div>
+    <footer>
+        <img src="../assets/images/b_logo.svg" alt="보험개발원"> 
+        <p>Copyright © AOS AI Model Service All rights reserved.</p> 
+    </footer>
+</body>
+
+</html>

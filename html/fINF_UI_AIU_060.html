@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <script src="../assets/js/upload.js"></script>
+    <title>AI 견적 신청 </title>
+</head>
+
+<body>
+    <header class="ai_img">
+        <nav>
+            <h1><img src="../assets/images/logo.svg"><span>AOS AI Model Service</span></h1>
+        </nav>
+        <div class="top_title">
+            <h2>
+                AI 견적 신청
+            </h2>
+            <ul class="location">
+                <li> <a href="fINF_UI_AIU_010.html">
+                        <img src="../assets/images/home.svg"></a>
+                </li>
+                <li>
+                    AI 견적
+                </li>
+                <li>
+                    AI 견적 신청
+                </li>
+            </ul>
+        </div>
+        <div class="sub_menu">
+            <ul>
+
+            <!-- 현재 페이지에선 active 클래스를 붙여주세요 -->
+            <li><a href="fINF_UI_AIU_050.html"> AI 견적 신청 이력 </a></li>
+            <li class="active"><a href="fINF_UI_AIU_060.html"> AI 견적 신청 </a></li>
+        </ul>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="container">
+       
+            <div class="ai_form ">
+                <ul>
+                       <!-- 입력값이 필수인 라벨은 requirement 클래스를 붙여주세요 -->
+                    <li><label class="requirement">차량번호</label><input type="text" required><button><img src="../assets/images/search-normal.svg">조회</button></li>
+                    <li><label class="requirement">차량명</label><input type="text"></li>
+                    <li><label class="requirement">모델명</label><input type="text"></li>
+                    <li><label class="requirement">최초등록일자</label><input type="date"></li>
+                    <li><label class="requirement">도장종류</label><input type="text"></li>
+                    <li><label class="requirement">M/H</label><input type="text"></li>
+                </ul>
+            </div>
+            <div class="form">
+            <div class="img_upload">
+                <div class="button_warp">
+                    <label class="button" for="fileElem"><img src="../assets/images/folder.svg">이미지 업로드</label>
+                </div>
+                <div id="drop-area">
+
+                    <form class="my-form">
+                        <p> <img src="../assets/images/upload_img.svg"></p>
+                        <p class="txt"> 파일을 마우스로 끌어오세요</p>
+                        <p class="sub_txt"> Supports: PNG, JPG, JPEG</p>
+                        <input type="file" id="fileElem" multiple accept="image/*"
+                            onchange="handleFiles(this.files)">
+
+                    </form>
+                    <div id="gallery"></div>
+                    
+                </div>
+                <div class="button_center_warp">
+                    <button class="full"><img src="../assets/images/document-filter.svg">AI 견적 신청</button>
+                </div>
+                </div>
+                </div>
+              
+            </div>
+    </div>
+</div>
+<footer>
+    <img src="../assets/images/b_logo.svg" alt="보험개발원"> 
+    <p>Copyright © <strong> AI Model Service</strong> All rights reserved.</p> 
+</footer>
+</body>
+
+</html>
