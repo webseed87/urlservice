@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../assets/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="icon" sizes="32x32" type="image/png" href="../assets/images/favicon.png">
     <script src="../assets/js/common.js" defer></script>
     <script src="../assets/js/upload.js" defer></script>
     <title>대표사진 신청
@@ -82,7 +83,7 @@
                 </ul>
                 </div>
             <div class="blur_gallery">
-                <ul>
+                <ul class="img_expand">
                     <li>
                         <input type="checkbox" class="bulr_checkbox itemCheckbox1">
                         <img src="../assets/images/img1.png">
@@ -114,6 +115,17 @@
         <img src="../assets/images/b_logo.svg" alt="보험개발원"> 
         <p>Copyright © AOS AI Model Service All rights reserved.</p> 
     </footer>
+     <!-- 이미지 팝업부분 -->
+     <div class="img_popup_continer"></div>
+    <div class="img_popup">
+        <span class="img_close">&times;</span>
+        <img class="img_popup_content" src="">
+        <div class="pagenation">
+            <button class="prev_button defult_button">&lt;</button>
+            <button class="next_button defult_button">&gt;</button>
+        </div>
+
+    </div>
 </body>
 
 </html>

@@ -9,41 +9,69 @@ $(document).ready(function(){
       });
 
       // 이미지 팝업부분
-      var images = $(".img_expand li");
       var currentIndex = 0;
-
+      var $ul;
+      
       $(".img_expand li").on('click', function (e) {
-        if ($(e.target).is('input[type="checkbox"]')) {
-          return;
-      }
-          currentIndex = images.index($(this));
+          if ($(e.target).is('input[type="checkbox"]')) {
+              return;
+          }
+      
+          var $clickedLi = $(this);
+          $ul = $clickedLi.closest('.img_expand');
+          var $images = $ul.find('li');
+      
+          currentIndex = $images.index($clickedLi);
+          showImage();
+          console.log($images.length)
+          if( $images.length < 2){
+            $(".img_popup .next_button").css('display', 'none');
+            $(".img_popup .prev_button").css('display', 'none');
+          }
+      });
+      
+      $(".img_popup .next_button").on('click', function () {
+          currentIndex = (currentIndex + 1) % $ul.find('li').length;
           showImage();
       });
+      
+      $(".img_popup .prev_button").on('click', function () {
+          currentIndex = (currentIndex - 1 + $ul.find('li').length) % $ul.find('li').length;
+          showImage();
+      });
+      
+      function showImage() {
+          var imageUrl = $ul.find('li').eq(currentIndex).find('img').attr('src');
+          $(".img_popup_content").attr('src', imageUrl);
+       
+
+        //  스크롤 위치 계산하기
+
+        var imageUrl = $ul.find('li').eq(currentIndex).find('img').attr('src');
+        $(".img_popup_content").attr('src', imageUrl);
+    
+        // Calculate the top position based on scroll
+        var scrollPosition = $(window).scrollTop();
+        $(".img_popup").css({
+            'top': 'calc(50% + ' + scrollPosition   + 'px)'
+        });
+    
+     
+
+        $(".img_popup_continer").css('display', 'block');
+          $(".img_popup").css('display', 'block');
+          $(".img_popup_continer").css('display', 'block');
+          $("body").addClass('popup');
+      }
       
       $(".img_close, .img_popup_continer").on('click', function () {
           $(".img_popup").css('display', 'none');
           $(".img_popup_continer").css('display', 'none');
           $("body").removeClass('popup');
+          $(".img_popup .next_button").css('display', 'block');
+          $(".img_popup .prev_button").css('display', 'block');
       });
       
-      $(".img_popup .next_button").on('click', function () {
-          currentIndex = (currentIndex + 1) % images.length;
-          showImage();
-      });
-      
-      $(".img_popup .prev_button").on('click', function () {
-          currentIndex = (currentIndex - 1 + images.length) % images.length;
-          showImage();
-      });
-      
-      function showImage() {
-          var imageUrl = images.eq(currentIndex).find('img').attr('src');
-          $(".img_popup_content").attr('src', imageUrl);
-          $(".img_popup").css('display', 'block');
-          $(".img_popup_continer").css('display', 'block');
-          $("body").addClass('popup');
-      }
-     
       // 탭 메뉴 부분
       $(".arrow_button").on("click", function () {
         $(this).toggleClass("open");

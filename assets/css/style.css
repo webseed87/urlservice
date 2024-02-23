@@ -1617,7 +1617,7 @@ z-index: 10;
 top: 0;
 left: 0;
 width: 100vw;
-height: 100vh;
+height: 100%;
 background: rgba(0, 0, 0, 0.7);
 }
 .img_expand li {
@@ -1645,7 +1645,7 @@ position: fixed;
 top:50%;
 left:50%;
 transform: translate(-50%, -50%);
-z-index: 10;
+z-index: 110;
 width: 100%;
 max-width: 600px;
 }
@@ -1922,10 +1922,11 @@ padding-right: 0px;}
 .popup_warp{
 width:100vw;
 max-width:100vw;
-height: 100vh;
+height: 100%;
 overflow-y: auto;
 border-radius: 0;
 }
+
 .popup_warp .header {
 border-top-left-radius: 0;
 border-top-right-radius: 0;
@@ -2073,5 +2074,16 @@ width: 90%;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
+
+.img_popup {
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 110;
+    width: 90%;
+    max-width: 600px;
+    overscroll-behavior: none;
+    }
 }
 
