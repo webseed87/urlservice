@@ -14,11 +14,9 @@ $(document).ready(function () {
 
     $(".popup_warp").each(function () {
         var $popupWarp = $(this);
-        // 스크롤 이벤트를 등록
         $popupWarp.on('scroll', function () {
             var scrollPosition = $popupWarp.scrollTop();
             if (scrollPosition >= 150 && scrollPosition < 500) {
-                // 원하는 동작 수행
                 $(".img_popup").css({
                     "top": "calc(50vh + 375px)"
                 });
@@ -63,13 +61,13 @@ $(document).ready(function () {
         $(".img_popup_continer").css('display', 'block');
         $(".img_popup").css('display', 'block');
         $(".img_popup_continer").css('display', 'block');
-        $("body").addClass('popup');
+        $("body").addClass('popup_scroll');
     }
 
     $(".img_close, .img_popup_continer").on('click', function () {
         $(".img_popup").css('display', 'none');
         $(".img_popup_continer").css('display', 'none');
-        $("body").removeClass('popup');
+        $("body").removeClass('popup_scroll');
         $(".img_popup .next_button").css('display', 'block');
         $(".img_popup .prev_button").css('display', 'block');
     });
@@ -91,4 +89,25 @@ $(document).ready(function () {
         $(".popup_warp").css('display', 'none');
         $("body").removeClass('popup');
     })
+
+    //개인정보 토큰값에 따라 리스트 다르게 보이게
+    var userTypeSelect = $('#userType');
+    var table = $('.filter_list');
+    function toggleColumnVisibility(className, show) {
+        var columns = table.find('.' + className);
+        columns.css('display', show ? '' : 'none');
+    }
+    function handleUserTypeChange() {
+        var selectedValue = userTypeSelect.val();
+        if (selectedValue === 'agency') {
+            toggleColumnVisibility('ins_list', true);
+            toggleColumnVisibility('other_list', false);
+        } else {
+            toggleColumnVisibility('ins_list', false);
+            toggleColumnVisibility('other_list', true);
+
+        }
+    }
+    handleUserTypeChange();
+    userTypeSelect.on('change', handleUserTypeChange);
 })

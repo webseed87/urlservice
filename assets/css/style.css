@@ -28,6 +28,9 @@ line-height: 1;
 body.popup{
 overflow: hidden;
 }
+body.popup_scroll{
+overflow: hidden;
+}
 ol, ul {
 list-style: none;
 }
@@ -224,15 +227,24 @@ font-weight: 500;
 --border-light-color:#E0E0E0;
 --lighter-text-color:#D2D2DF;
 --heading-text-color:#0E1A35;
+--lighte-bg-color:#f5f5f5;
 font-size: 14px;
 overflow-x: hidden;
 }
 
-input[type=text],input[type=date],select{
+input[type=text],input[type=date],input[type=number],select{
 border: 1px solid var(--border-light-color);
 border-radius: 6px;
 padding: 8px 10px;
 background-color: var(--defult-white);
+width: calc(100% - 10px);
+}
+input[type=text]:disabled,input[type=date]:disabled,input[type=number]:disabled,select:disabled{
+border: 1px solid var(--border-light-color);
+border-radius: 6px;
+padding: 8px 10px;
+color: var(--lighter-text-color);
+background-color: var(--lighte-bg-color);
 width: calc(100% - 10px);
 }
 input::placeholder{
@@ -495,6 +507,7 @@ color: var(--defult-white);
 footer{
 width: 100%;
 margin-top: 50px;
+margin-bottom: 30px;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
@@ -613,7 +626,7 @@ vertical-align: middle;
 background-color: transparent;  
 }
 .content table tr:hover{
-background-color: #f5f5f5;    
+background-color: var(--lighte-bg-color);    
 }
 .content table td, .content table th{
 vertical-align: middle;
@@ -673,7 +686,7 @@ font-size: 14px;
 border-radius: 50%;
 }
 .content .pagenavigation ul li a:hover{
-background-color: #f5f5f5;
+background-color: var(--lighte-bg-color);
 }
 .content .pagenavigation ul li:first-child a,.content .pagenavigation ul li:last-child a{
 color: #666;
@@ -683,6 +696,9 @@ background-color: var(--point-color);
 color: var(--defult-white);
 border-radius: 50%;
 }
+
+/* 개인정보 필터 리스트 */
+
 .form #drop-area {
 border: 2px dashed #A7B1F2;
 border-radius: 20px;
@@ -882,33 +898,36 @@ width: 100%;
 margin-bottom: 30px;
 }
 .detail_top_info ul li{
-border-top: 1px solid var(--border-light-color);
-border-bottom: 1px solid var(--border-light-color);
 display: flex;
 align-items: center;
-width: 33.33%;
+width: 20%;
+border-top: 1px solid var(--border-light-color);
+border-bottom: 1px solid var(--border-light-color);
+
 }
-.detail_top_info ul li:nth-of-type(4),.detail_top_info ul li:nth-of-type(5),.detail_top_info ul li:nth-of-type(6){
-border-top: none;
+.detail_top_info ul li:last-child{
+    border-right:  1px solid var(--border-light-color);
 }
+
 .detail_top_info ul li span{
 width: 60%;
-display: inline-block;
+display: flex;
 padding: 0 10px; 
 height: 50px;
 display: flex;
 align-items: center;
+
 }
 .detail_top_info ul li > .title{
 width: 40%;
+display: flex;
+padding: 0 10px; 
 background-color: #f9f9f9;
-border-right:1px solid var(--border-light-color);
-border-left:1px solid var(--border-light-color);
-}
-.detail_top_info ul li:nth-of-type(1) .title,.detail_top_info ul li:nth-of-type(4) .title{
-border-left:none;
+border-right: 1px solid var(--border-light-color);
+border-left: 1px solid var(--border-light-color);
 
 }
+
 .filter_detail_warp{
 width: 100%;
 display: flex;
@@ -1048,7 +1067,6 @@ font-size: 18px;
 }
 .detail_info ul{
 display: flex;
-justify-content: center;
 margin-top: 20px;
 
 }
@@ -1295,7 +1313,7 @@ padding: 20px;
 }
 .result_list ul li.wokr_list .subject{
 display: flex; 
-background-color: #f5f5f5;
+background-color: var(--lighte-bg-color);
 border-radius: 10px;
 color: var(--heading-text-color);
 font-weight: 700;
@@ -1335,6 +1353,7 @@ left: 50%;
 top: 50%;
 transform: translate(-50%, -50%);
 border-radius: 20px;
+overflow: auto;
 }
 .popup_warp .header{
 background-color: var(--point-color);
@@ -1468,7 +1487,7 @@ height: 200px;
 overflow-y: auto;
 }
 .popup_warp .pop_con .info  .work_list .top{
-background-color: #f5f5f5;
+background-color: var(--lighte-bg-color);
 padding: 15px;
 width: 100%;
 display: flex;
@@ -1517,7 +1536,7 @@ padding: 20px;
 margin-top: 20px;
 }
 .depth_title_bg{
-background-color: #f5f5f5;
+background-color: var(--lighte-bg-color);
 border-radius: 10px;
 display: flex;
 justify-content: space-between;
@@ -1581,10 +1600,11 @@ transform: rotate(180deg);
 }
 .depth_contents .state .table_list {
 width: 80%;
+padding: 0 10px;
 }
 .depth_contents .state .table_list .list_title{
 display: flex;
-background-color: #f5f5f5;
+background-color: var(--lighte-bg-color);
 border-radius: 10px;
 width: calc(100% - 20px);
 padding: 15px 10px;
@@ -1599,16 +1619,15 @@ padding: 15px 10px;
 margin-left: 20px;
 justify-content: space-around;
 }
-.depth_contents .state .table_list .list_title li, .depth_contents .state .table_list .list_vlaue li{
-display: flex;
-width:calc(12.25% - 10px);
-justify-content: center;
-padding: 0 10px;
-text-align: center;
-align-items: center;
-flex-wrap: wrap;
-box-sizing: border-box;
+.depth_contents .state .table_list  thead {
+    background-color: var(--lighte-bg-color);
+    border-radius: 20px;
+}
+.depth_contents .state .table_list  th,.depth_contents .state .table_list  td{
 font-size: 12px;
+padding:  10px;
+vertical-align: middle;
+text-align: center;
 }
 /* 이미지 리스트에서 이미지 확대하는 기능 공통부분 */
 .img_popup_continer{
@@ -1970,23 +1989,22 @@ display: none;
 header  .sub_menu ul{
 height: 50px;
 }
+
 .detail_top_info ul li{
-width: 50%;
+width: 100%;
 font-size: 12px;
+border-top: none;
+border-bottom: 1px solid var(--border-light-color);
+border-right:  1px solid var(--border-light-color);
 }
+.detail_top_info ul li:first-child{
+    border-top: 1px solid var(--border-light-color);
+   }
+
 .detail_top_info ul li span {
 padding: 0 4px;
 }
-.detail_top_info ul li:nth-of-type(3),.detail_top_info ul li:nth-of-type(4),.detail_top_info ul li:nth-of-type(5){
-border-top:none;
-}
-.detail_top_info ul li:nth-of-type(4) .title{
-border-left:1px solid var(--border-light-color);
 
-}
-.detail_top_info ul li:nth-of-type(3) .title,.detail_top_info ul li:nth-of-type(5) .title {
-border-left: none;
-}
 .detail_title {
 display: block;
 }
@@ -2019,12 +2037,9 @@ width: calc(100% - 164px)
 width: 100%;
 }
 .content .ai_form ul li {
-margin-left: 0;
-}
-
-.content .ai_form ul li {
 display: flex;
 width: 100%;
+margin-left: 0;
 }
 
 .result_list ul li.wokr_list {
@@ -2047,7 +2062,7 @@ border-top-right-radius:10px
 width: 90%;
 }
 .pop_con .depth_contents ul.pice> li {
-    width: calc(25% - 10px);
+    width: calc(33.33% - 10px);
 }
 .pop_con .depth_contents ul.pice> li:nth-child(6n) {
     margin-right: 10px;
@@ -2067,10 +2082,21 @@ width: 90%;
 .depth_contents .state .table_list .list_title, .depth_contents .state .table_list .list_vlaue {
     margin-left: 0;
     padding: 5px;
+    overflow-x: auto;
+    width: 100%;
 }
-.depth_contents .state .table_list .list_title li,.depth_contents .state .table_list .list_vlaue li{
+.depth_contents .state .table_list{
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 0;
+
+}
+.depth_contents .state .table_list  th,.depth_contents .state .table_list  td{
     width: 12.25%;
-    font-size: 10px;
+    font-size: 12px;
+    padding: 2px 5px;
+    vertical-align: middle;
+    text-align: center;
 }
 .popup_warp .pop_con {
     border-bottom-left-radius: 0px;

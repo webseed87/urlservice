@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" sizes="32x32" type="image/png" href="../assets/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/common.js"></script>
     <title>개인정보 신청 이력</title>
 </head>
 
@@ -44,6 +46,11 @@
         <div class="container">
             <div class="search_warp">
                 <div class="search">
+                    <select id="userType">
+                        <option value="agency">유관기관</option>
+                        <option value="normal">일반사용자</option>
+                
+                    </select>
                     <select>
                         <option>제목</option>
                         <option>차량번호</option>
@@ -58,42 +65,42 @@
             
             <table class="filter_list">
                 <colgroup>
+                 <!-- 보험사일때만 보여지는 컬럼은 클래스를 ins_list붙여주세요,
+                     개인일때만 보여지는 컬럼은 클래스를 other_list를 붙여주세요 -->
                     <col width="7%" />
                     <col width="" />
-                    <col width="" />
-                    <!-- 보험사일 경우 -->
-                    <col width="" />
-                    <col width="7%" class="list_none"/>
-                    <col width="5%" class="list_none"/>
-                    <col width="7%" class="list_none"/>
-                    <col width="5%" class="list_none"/>
+                    <col width="30%"  class="other_list"/>
+                    <col width="10%"  class="ins_list"/>
+                    <col width="10%"  class="ins_list"/>
+                    <col width="5%" class="list_none ins_list"/>
+                    <col width="7%" class="list_none ins_list"/>
+                    <col width="5%" class="list_none ins_list"/>
   
                     <col width="12%"  class="list_none"/>
                 </colgroup>
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th class="title">Title</th>
-                        <th>사고접수번호</th>
-                        <th>차량번호</th>
-                        <th class="list_none">차종</th>
-                        <th class="list_none">사진 수</th>
-                        <!-- 보험사일 경우 -->
-                        <th class="list_none">담보</th>
-                        <th class="list_none">서열</th>
+                        <th>Title</th>
+                        <th class="other_list"> 메모</th>
+                        <th  class="ins_list">사고접수번호</th>
+                        <th  class="ins_list">차량번호</th>
+                        <th class="list_none ins_list">사진 수</th>
+                        <th class="list_none ins_list">담보</th>
+                        <th class="list_none ins_list">서열</th>
                         <th class="list_none">신청 일시</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>9</td>
-                        <td class="title"><a href="fINF_UI_AIU_030.html">테스트 준비중입니다, 타이틀은 필수 값입니다.</a> </td>
-                        <td>23134123412313</td>
-                        <td>11가1111</td>
-                        <td class="list_none">k5</td>
-                        <td class="list_none">5</td>
-                        <td class="list_none">자차</td>
-                        <td class="list_none">2</td>
+                        <td ><a href="fINF_UI_AIU_030.html">테스트 준비중입니다, 타이틀은 필수 값입니다.</a> </td>
+                        <td class="other_list">메모입니다 메모입니다.</td>
+                        <td  class="ins_list">23134123412313</td>
+                        <td  class="ins_list">11가1111</td>
+                        <td class="list_none ins_list">5</td>
+                        <td class="list_none ins_list">자차</td>
+                        <td class="list_none ins_list">2</td>
                         <td class="list_none">2024.01.03 13:55:31</td>
                     </tr>
                   
