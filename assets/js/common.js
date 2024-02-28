@@ -15,9 +15,7 @@ $(document).ready(function () {
     $(".popup_warp").each(function () {
         var $popupWarp = $(this);
         $popupWarp.on('scroll', function () {
-            console.log($popupWarp.scrollTop())
             var scrollPosition = $popupWarp.scrollTop();
-            // 팝업 위치 조절 부분
              if ($(window).width() <= 720) {
                 if (scrollPosition >= 150 && scrollPosition < 500) {
                     $(".img_popup").css({
@@ -32,7 +30,7 @@ $(document).ready(function () {
             else if ($(window).width() <= 1280) {
                 if (scrollPosition >= 300 && scrollPosition < 800) {
                     $(".img_popup").css({
-                        "top": "calc(50vh + 305px)"
+                        "top": "calc(50vh + 375px)"
                     });
                 } else {
                     $(".img_popup").css({
