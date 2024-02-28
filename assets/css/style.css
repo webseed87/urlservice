@@ -247,6 +247,7 @@ color: #666;
 background-color: var(--lighte-bg-color);
 width: calc(100% - 10px);
 }
+
 input::placeholder{
 color: var(--lighter-text-color);
 }
@@ -1732,7 +1733,19 @@ padding-right: 0px;}
 
 /* ===================== 모바일 부분 ================================= */
 @media (max-width:720px){
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-inner-spin-button {
+display: none;
+appearance: none;
+}
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+color: rgba(0, 0, 0, 0); 
+opacity: 1;
+display: block;
+background: url(../images/calendar.svg) no-repeat 98% 50%; 
+border-width: thin;
+}
 body{ 
 font-size: 13px;
 }
