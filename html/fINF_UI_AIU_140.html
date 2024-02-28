@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <link rel="icon" sizes="32x32" type="image/png" href="../assets/images/favicon.png">
-    <script src="../assets/js/jquery.min.js"></script>  
+    <script src="../assets/js/jquery.min.js"></script>
     <link rel="stylesheet" href="../assets/css/swiper.css" />
     <script src="../assets/js/swiper.min.js"></script>
+    <script src="../assets/js/common.js"></script>
     <title>표준견적 이력 상세</title>
 </head>
 
@@ -18,7 +19,7 @@
             <a href="fINF_UI_AIU_010.html">
                 <h1><img src="../assets/images/logo.svg" alt="AOS AI Model Service"><span>AOS AI Model Service</span>
                 </h1>
-            </a>       
+            </a>
         </nav>
         <div class="top_title">
             <h2>
@@ -41,109 +42,264 @@
 
                 <!-- 현재 페이지에선 active 클래스를 붙여주세요 -->
                 <li class="active"><a href="fINF_UI_AIU_130.html"> 표준견적 신청 이력 </a></li>
-                <li ><a href="fINF_UI_AIU_150.html">표준견적  신청 </a></li>
+                <li><a href="fINF_UI_AIU_150.html">표준견적 신청 </a></li>
             </ul>
         </div>
     </header>
 
     <div class="content">
         <div class="container">
-       
-        <div class="estimate_info">
-            <h4>견적 정보</h4>
-        <table class="estimate_list">
 
-            <thead>
-                <tr>
-                    <th>구분</th>
-                    <th>작업내용</th> 
-                    <th>작업</th>
-                    <th>시간</th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                    <td>주체</td>
-                    <td>프런터범퍼커버</td>
-                    <td>교환</td>
-                    <td>1.89</td>
-      
-                </tr>
-            </tbody>
-        </table>
-    </div>
+            <div class="estimate_info">
+                <h4>표준검색 필터 항목</h4>
+                <table class="estimate_list">
 
-    <div class="images_info">
-        <h4>이미지 정보</h4>
-        
-    <div class="img_thumbnail_warp">
-        <div class="img_big_warp">
-        <div class="swiper-container slider">
-        <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="../assets/images/img1.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img2.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img3.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img4.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img5.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img6.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img7.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img8.png" alt=""></div>
-        
-        </div>
-        
-        </div>
-        </div>
-        
-        <div class="img_thumbnail">
-        <div class="swiper-container slider-thumbnail">
-        <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="../assets/images/img1.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img2.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img3.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img4.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img5.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img6.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img7.png" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/images/img8.png" alt=""></div>
-        </div>
-        </div>
-        </div>
-    </div>
-    <script>
-        var sliderThumbnail = new Swiper('.slider-thumbnail', {
-    slidesPerView: 'auto',
-    freeMode: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    touchRatio: 0,
-    breakpoints: {
-    700: {
-    slidesPerView: 4,
-    }
-    },
-    });
-    
-    var slider = new Swiper('.slider', {
-    navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-    },
-    thumbs: {
-    swiper: sliderThumbnail
-    },
-    
-    });
-    </script>
-    </div>
+                    <thead>
+                        <tr>
+                            <th>보험사</th>
+                            <th>지역</th>
+                            <th>제조사</th>
+                            <th>차종</th>
+                            <th>차명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
+                        <tr>
+                            <td>현대해상</td>
+                            <td>서울</td>
+                            <td>현대</td>
+                            <td>K5</td>
+                            <td>차명1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="estimate_info">
+                <h4>표준검색 세부 항목</h4>
+                <table class="estimate_list">
+
+                    <thead>
+                        <tr>
+                            <th>탈부착 작업시간</th>
+                            <th>도장작업시간</th>
+                            <th>도장타입</th>
+                            <th>도장컬러</th>
+                            <th>도장코트</th>
+                            <th>최초등록일자</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>1시간</td>
+                            <td>1시간</td>
+                            <td>무광</td>
+                            <td>블랙</td>
+                            <td>코트1</td>
+                            <td>2024-2-28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="images_info">
+                <h4>이미지 정보</h4>
+
+                <div class="img_thumbnail_warp">
+                    <div class="img_big_warp">
+                        <div class="swiper-container slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="../assets/images/img1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img2.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img3.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img4.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img5.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img6.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img7.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img8.png" alt=""></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="img_thumbnail">
+                        <div class="swiper-container slider-thumbnail">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="../assets/images/img1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img2.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img3.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img4.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img5.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img6.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img7.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../assets/images/img8.png" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var sliderThumbnail = new Swiper('.slider-thumbnail', {
+                        slidesPerView: 'auto',
+                        freeMode: true,
+                        watchSlidesVisibility: true,
+                        watchSlidesProgress: true,
+                        touchRatio: 0,
+                        breakpoints: {
+                            700: {
+                                slidesPerView: 4,
+                            }
+                        },
+                    });
+
+                    var slider = new Swiper('.slider', {
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        thumbs: {
+                            swiper: sliderThumbnail
+                        },
+
+                    });
+                </script>
+                
+            </div>
+            <div class="standard_chart">
+                <h4>표준견적</h4>
+                <div>
+                    <a class="popup_button"><img src="../assets/images/table.svg" style="width:100%; height:auto"></a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<footer>
-    <img src="../assets/images/b_logo.svg" alt="보험개발원"> 
-    <p>Copyright © AOS AI Model Service All rights reserved.</p> 
-</footer>
+    <footer>
+        <img src="../assets/images/b_logo.svg" alt="보험개발원">
+        <p>Copyright © AOS AI Model Service All rights reserved.</p>
+    </footer>
+    <div class="popup_continer"></div>
+
+    <!-- 팝업 부분 -->
+    <div class="popup_warp">
+        <div class="header">
+            <h4>견적정보</h4>
+            <span class="close"></span>
+        </div>
+        <div class="pop_con">
+            <div class="info">
+                <h5>수리차 정보</h5>
+                <div class="info_contents">
+                    <ul>
+                        <li><label>차량번호</label><input type="text" disabled value="11가 1111"></li>
+                        <li><label>차량명</label><input type="text"  disabled value="k5"></li>
+                        <li><label>모델명</label><input type="text" disabled value="가솔린"></li>
+                        <li class="four"><label>최초등록일자</label><input type="date" disabled value="2024-02-28"></li>
+                        <li class="four"><label>부품적용일자</label><input type="date" required></li>
+                        <li class="four"><label>사고일자</label><input type="date" required></li>
+                        <li class="four"><label>입고일자</label><input type="date" required></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="info">
+                <h5>공임</h5>
+                <div class="info_contents">
+                    <ul>
+                        <li class="two"><label>탈부착 작업</label><input type="text" required class="wh100"></li>
+                        <li class="two"><label>도장작업</label><input type="text"><input type="text" class="ml5" required>
+                        </li>
+                        <li><label>도장칼라</label><input type="text" required></li>
+                        <li><label>가열건조비</label><input type="text" required></li>
+                        <li><label>도장코트</label><input type="text" required></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info">
+                <h5>청구처</h5>
+                <div class="info_contents">
+                    <ul>
+                        <li><label>보험사</label><input type="text" required></li>
+                        <li><label>과실</label><input type="text" required></li>
+                        <li><label>접수번호</label><input type="text" required></li>
+                        <li><label>탈부착 M/H</label><input type="text" required></li>
+                        <li><label>현금 M/H</label><input type="text" required></li>
+                        <li><label>도장 M/H</label><input type="text" required></li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="info">
+                <h5>이미지</h5>
+                <div class="info_contents">
+                    <ul class="image_list img_expand">
+                        <li><img src="../assets/images/car1.png"></li>
+                        <li><img src="../assets/images/car2.png"></li>
+                        <li><img src="../assets/images/car3.png"></li>
+                        <li><img src="../assets/images/car4.png"></li>
+                        <li><img src="../assets/images/img1.png"></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info">
+                <h5>작업항목</h5>
+
+                <div class="work_list">
+                    <p class="top"> <span>작업항목: 도장</span><span>금액:170,000</span></p>
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>작업내용</th>
+                                <th>작업</th>
+                                <th>시간</th>
+                                <th>부품금액</th>
+                                <th>공임금액</th>
+                                <th>도장재료비</th>
+                                <th>기준부품</th>
+                                <th>기준공임</th>
+                                <th>부품번호</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1.89</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- 이미지 팝업부분 -->
+        <div class="img_popup">
+            <span class="img_close">&times;</span>
+            <img class="img_popup_content" src="">
+            <div class="pagenation">
+                <button class="prev_button defult_button">&lt;</button>
+                <button class="next_button defult_button">&gt;</button>
+            </div>
+
+        </div>
+    </div>
 </body>
 
 </html>
