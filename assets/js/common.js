@@ -32,7 +32,7 @@ $(document).ready(function () {
             else if ($(window).width() <= 1280) {
                 if (scrollPosition >= 300 && scrollPosition < 800) {
                     $(".img_popup").css({
-                        "top": "calc(50vh + 365px)"
+                        "top": "calc(50vh + 305px)"
                     });
                 } else {
                     $(".img_popup").css({
