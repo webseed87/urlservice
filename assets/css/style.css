@@ -1799,14 +1799,9 @@ padding-right: 0px;}
 /* ===================== 모바일 부분 ================================= */
 
 @media (max-width:980px){
-input[type="date"]::-webkit-calendar-picker-indicator,
-input[type="date"]::-webkit-inner-spin-button {
-display: none;
--webkit-appearance: none;
-margin: 0;
-}
+
 input[type=date]::after{
-right: -1px;
+right: 8px;
 }
 body{ 
 font-size: 13px;
