@@ -251,20 +251,20 @@ background-color: var(--lighte-bg-color);
 width: calc(100% - 10px);
 }
 
-  .open-button {
-    position: absolute;
-    top: 15px;
-    right: 18px;
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    pointer-events: none;
-  }
-  
-  .open-button button {
-    border: none;
-    background: transparent;
-  }
+.open-button {
+position: absolute;
+ top: 24px;
+right: 5px;
+width: 20px;
+height: 20px;
+ background: #fff;
+ pointer-events: none;
+}
+.open-button button {
+padding: 0;
+border: 0;
+background: transparent;
+}
 input::placeholder{
 color: var(--lighter-text-color);
 }
