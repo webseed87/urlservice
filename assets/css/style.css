@@ -18,9 +18,7 @@ font-size: 100%;
 vertical-align: baseline;
 background: transparent;
 }
- li{
-position: relative;
-}
+
 a {
 color: #000;    
 text-decoration: none;
@@ -238,7 +236,7 @@ overflow-x: hidden;
 input[type=text],input[type=date],input[type=number],select{
 border: 1px solid var(--border-light-color);
 border-radius: 6px;
-padding: 4px 6px;
+padding: 8px 10px;
 background-color: var(--defult-white);
 width: calc(100% - 10px);
 }
@@ -250,21 +248,20 @@ color: #666;
 background-color: var(--lighte-bg-color);
 width: calc(100% - 10px);
 }
-
-.open-button {
+input[type=date]{
+position: relative;
+}
+input[type=date]::after{
+content: "📅";
 position: absolute;
- top: 24px;
+top: 8px;
 right: 5px;
 width: 20px;
 height: 20px;
- background: #fff;
- pointer-events: none;
+background: #fff;
+pointer-events: none; 
 }
-.open-button button {
-padding: 0;
-border: 0;
-background: transparent;
-}
+
 input::placeholder{
 color: var(--lighter-text-color);
 }
@@ -1080,7 +1077,7 @@ margin-bottom: 5px;
 .detail_info ul li select, .detail_info ul li input[type="date"]{
 border: 1px solid  var(--border-light-color); 
 border-radius: 6px;
-padding: 4px 6px;
+padding: 8px 10px;
 width: 100%;
 }
 .standard_chart{
@@ -1211,7 +1208,7 @@ height: 100%;
 width: calc(100% - 128px);
 height: 100%;
 }
-.content .ai_form ul li button{
+.content .ai_form ul li button.search{
 width: 110px;
 padding: 8px 15px;
 display: flex;
@@ -1807,12 +1804,7 @@ input[type="date"]::-webkit-inner-spin-button {
 display: none;
 appearance: none;
 }
-.open-button {
-top: 24px;
-right: 4px;
-width: 16px;
-height: 16px;
-}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
 color: rgba(0, 0, 0, 0); 
 opacity: 1;
