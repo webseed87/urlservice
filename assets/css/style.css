@@ -2095,7 +2095,7 @@ width: 84px;
 .content .ai_form ul li input {
 width: calc(100% - 84px)
 }
-.content .ai_form ul li button {
+.content .ai_form ul li button.search {
 width: auto;
 padding: 4px 8px;
 
