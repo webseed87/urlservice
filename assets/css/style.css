@@ -1806,7 +1806,7 @@ display: none;
 margin: 0;
 }
 input[type=date]::after{
-right: 4px;
+right: -1px;
 }
 body{ 
 font-size: 13px;
