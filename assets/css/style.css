@@ -248,6 +248,7 @@ color: #666;
 background-color: var(--lighte-bg-color);
 width: calc(100% - 10px);
 }
+
 input[type=date]{
 position: relative;
 }
@@ -255,10 +256,10 @@ input[type=date]::after{
 content: "📅";
 position: absolute;
 top: 8px;
-right: 5px;
+right: 7px;
 width: 20px;
 height: 20px;
-background: #fff;
+background: transparent;
 pointer-events: none; 
 }
 
@@ -1798,20 +1799,15 @@ padding-right: 0px;}
 /* ===================== 모바일 부분 ================================= */
 
 @media (max-width:980px){
-    
-input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="date"]::-webkit-inner-spin-button {
 display: none;
 appearance: none;
 }
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-color: rgba(0, 0, 0, 0); 
-opacity: 1;
-display: block;
-background: url(../images/calendar.svg) no-repeat 98% 50%; 
-border-width: thin;
+input[type=date]::after{
+right: 2px;
 }
+
 body{ 
 font-size: 13px;
 }
@@ -1926,7 +1922,7 @@ padding: 20px 15px
 ul.main_menu li:nth-child(3),ul.main_menu li:nth-child(4){
 margin-bottom: 0px;
 }
-ul.main_menu li:nth-of-type(2n){
+ul.main_menu li:nth-of-type(2n + 2){
 margin-right: 0;
 }
 header.main_img{
@@ -1945,13 +1941,14 @@ padding: 14px;
 flex-wrap: wrap;
 }
 .detail_info ul li{
-width: calc(50% - 8px);
+width: calc(50% - 6px);
 margin-right: 8px;
 margin-bottom: 10px;
 }
-.detail_info ul li:last-child {
-margin-right: 8px;
+.detail_info ul li:nth-child(2n){
+    margin-right: 0px;  
 }
+
 
 .main_img .serach_bar{
 padding: 0 30px;
