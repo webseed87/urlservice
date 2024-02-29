@@ -2,6 +2,12 @@ document.addEventListener('DOMContentLoaded', function () {
   let dropArea = document.getElementById("drop-area");
 let droppedFiles = [];
 
+
+let deleteAllButton = document.createElement('button');
+deleteAllButton.addEventListener('click', function () {
+  deleteAllImages();
+});
+
 // Prevent default drag behaviors
 ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
   dropArea.addEventListener(eventName, preventDefaults, false)   
@@ -38,6 +44,9 @@ function handleDrop(e) {
   var dt = e.dataTransfer;
   var files = dt.files;
 
+  // Reset droppedFiles array for each drop event
+  droppedFiles = [];
+
   // Add dropped files to the array without sorting
   droppedFiles = droppedFiles.concat([...files]);
 
@@ -45,8 +54,27 @@ function handleDrop(e) {
 
   // Process files in the order they were dropped
   processFilesSequentially(droppedFiles);
-  
+
   unhighlight();
+}
+function deleteAllImages() {
+  let gallery = document.getElementById('gallery');
+  let paragraphs = document.querySelectorAll('.my-form p');
+  let deleteAllButton = document.getElementById('deleteAllButton');
+
+  while (gallery.firstChild) {
+    gallery.removeChild(gallery.firstChild);
+  }
+
+  paragraphs.forEach(function (paragraph) {
+    paragraph.classList.remove('hidden');
+  });
+
+  // Remove the deleteAllButton after deleting all images
+  if (deleteAllButton) {
+    deleteAllButton.parentNode.removeChild(deleteAllButton);
+  }
+
 }
 function processFilesSequentially(files) {
   // Create a promise chain to process files in order
@@ -63,7 +91,7 @@ function processFilesSequentially(files) {
   });
 }
 let uploadProgress = []
-let progressBar = document.getElementById('progress-bar')
+// let progressBar = document.getElementById('progress-bar')
 
 function initializeProgress(numFiles) {
   // progressBar.value = 0
@@ -93,33 +121,78 @@ function handleFiles(files) {
   });
 }
 function previewFile(file) {
-    let reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = function () {
-        let imgContainer = document.createElement('div');
-        let img = document.createElement('img');
-        let fileNameContainer = document.createElement('div'); 
-        let closeButton = document.createElement('span');
+  let reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onloadend = function () {
+    let imgContainer = document.createElement('div');
+    let img = document.createElement('img');
+    let fileNameContainer = document.createElement('div');
+    let closeButton = document.createElement('span');
+    var paragraphs = document.querySelectorAll('.my-form p');
 
-        img.src = reader.result;
-        closeButton.src = '/images/x.svg'; // Set the path to your close image
-        closeButton.className = 'close-image'; // Add a class for styling
+    img.src = reader.result;
+    closeButton.src = '/images/x.svg'; // Set the path to your close image
+    closeButton.className = 'close-image'; // Add a class for styling
 
-        closeButton.addEventListener('click', function () {
-            imgContainer.remove();
-        });
+    closeButton.addEventListener('click', function () {
+      imgContainer.remove();
+      checkShowMessages(); // Check and show messages after removing the image
 
-        fileNameContainer.innerText = file.name;
-        fileNameContainer.className = 'file-name';
+      // Check and remove the deleteAllButton if no images are left
+      if (document.getElementById('gallery').childElementCount === 0) {
+        let deleteAllButton = document.getElementById('deleteAllButton');
+        if (deleteAllButton) {
+          deleteAllButton.remove();
+        }
+      }
+    });
 
-        imgContainer.appendChild(img);
-        imgContainer.appendChild(fileNameContainer); // Append file name container
-        imgContainer.appendChild(closeButton);
+    fileNameContainer.innerText = file.name;
+    fileNameContainer.className = 'file-name';
 
-        document.getElementById('gallery').appendChild(imgContainer);
+    imgContainer.appendChild(img);
+    imgContainer.appendChild(fileNameContainer); // Append file name container
+    imgContainer.appendChild(closeButton);
+
+    document.getElementById('gallery').appendChild(imgContainer);
+    paragraphs.forEach(function (paragraph) {
+      paragraph.classList.add('hidden');
+    });
+
+    // Create the deleteAllButton only if it doesn't exist
+    if (!document.getElementById('deleteAllButton')) {
+      let deleteAllButton = document.createElement('button');
+      deleteAllButton.id = 'deleteAllButton';
+      deleteAllButton.innerHTML = '전체 삭제';
+      deleteAllButton.addEventListener('click', function () {
+        deleteAllImages();
+      });
+
+      document.getElementById('drop-area').appendChild(deleteAllButton);
+    }
+  };
+}
+function checkShowMessages() {
+  let gallery = document.getElementById('gallery');
+  let paragraphs = document.querySelectorAll('.my-form p');
+  let deleteAllButton = document.getElementById('deleteAllButton');
+
+  if (gallery.childElementCount === 0) {
+    paragraphs.forEach(function (paragraph) {
+      paragraph.classList.remove('hidden');
+    });
+
+    // Hide the deleteAllButton when there are no images
+    if (deleteAllButton) {
+      deleteAllButton.style.display = 'none';
+    }
+  } else {
+    // Show the deleteAllButton when there are images
+    if (deleteAllButton) {
+      deleteAllButton.style.display = 'block';
+    }
   }
 }
-
 function uploadFile(file, i) {
   var url = 'https://api.cloudinary.com/v1_1/joezimim007/image/upload'
   var xhr = new XMLHttpRequest()
