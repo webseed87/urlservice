@@ -56,7 +56,6 @@ $(document).ready(function () {
 
         currentIndex = $images.index($clickedLi);
         showImage();
-        console.log($images.length)
         if ($images.length < 2) {
             $(".img_popup .next_button").css('display', 'none');
             $(".img_popup .prev_button").css('display', 'none');

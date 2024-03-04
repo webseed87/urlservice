@@ -68,6 +68,7 @@ margin-right: 5px;
 *{
 box-sizing: border-box;
 word-break:keep-all;
+
 }
 .gary_bg{
 background-color: #F9F9F9;
@@ -352,6 +353,7 @@ z-index: 1;
 height: 64vh;
 }
 header.main_img h2{
+font-family: 'roboto', sans-serif;
 width: 100%;
 display: flex;
 text-align: center;
@@ -412,6 +414,7 @@ z-index: 2;
 height: 7vh;
 }
 header nav h1 span{
+font-family: 'roboto', sans-serif;
 color: var(--defult-white);
 font-weight: 200;
 margin-left: 10px;
@@ -527,8 +530,10 @@ margin-bottom: 30px;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
+align-items: center;
 }
 footer p{
+font-family: 'roboto', sans-serif;
 color: #666;
 margin-left: 10px;
 }
@@ -852,6 +857,10 @@ position: relative;
 width: calc(16.66% - 10px);
 margin-top: 10px;
 overflow: hidden;
+}
+.blur_warp .blur_gallery ul figcaption, .filter_detail_after ul figcaption{
+display: flex;
+justify-content: center;
 }
 .blur_warp .blur_gallery ul li:last-child{
 margin-right: 0px;
@@ -1434,7 +1443,8 @@ width: calc(25% - 8px);
 position: relative;
 overflow: hidden;
 }
-.popup_warp .pop_con .info .info_contents ul.image_list li img{
+.popup_warp .pop_con .info .info_contents ul.image_list li img,
+.popup_warp .pop_con .info .info_contents ul.image_list li canvas{
 max-width: 100%;
 max-height: 100%;
 width: 100%;
@@ -1672,6 +1682,55 @@ justify-content: flex-end;
 border: 1px solid #FF5555;
 color: #FF5555;
 }
+
+/* 이미지업로드 로딩 아이콘 부분 */
+
+@-webkit-keyframes loader-spin {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+
+@keyframes loader-spin {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+.loader {
+position: absolute;
+margin: -18px 0 0 -18px;
+border: 3.6px solid var(--point-color);
+box-sizing: border-box;
+overflow: hidden;
+width: 36px;
+height: 36px;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+animation: loader-spin 2s linear infinite reverse;
+filter: url(#goo);
+box-shadow: 0 0 0 1px var(--point-color) inset;
+}
+.loader:before {
+content: "";
+position: absolute;
+-webkit-animation: loader-spin 2s cubic-bezier(0.59, 0.25, 0.4, 0.69) infinite;
+animation: loader-spin 2s cubic-bezier(0.59, 0.25, 0.4, 0.69) infinite;
+background: var(--point-color);
+transform-origin: top center;
+border-radius: 50%;
+width: 150%;
+height: 150%;
+top: 50%;
+left: -12.5%;
+}
+
 @media (max-height: 1000px){
 .popup_warp{
 height: 100%;
@@ -2194,4 +2253,3 @@ max-width: 600px;
 display: none;
 }
 }
-

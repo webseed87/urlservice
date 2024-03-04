@@ -129,6 +129,20 @@ function previewFile(file) {
     let fileNameContainer = document.createElement('div');
     let closeButton = document.createElement('span');
     var paragraphs = document.querySelectorAll('.my-form p');
+    // 로딩 이미지 추가 부분입니다, 이 부분을 리사이징 되면 삭제 하셔서 쓰세요
+    let loaderSVG = document.createElement('div');
+    loaderSVG.className = 'loader';
+    loaderSVG.innerHTML = `
+      <svg>
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 5 -2" result="gooey" />
+            <feComposite in="SourceGraphic" in2="gooey" operator="atop"/>
+          </filter>
+        </defs>
+      </svg>
+    `;
 
     img.src = reader.result;
     closeButton.src = '/images/x.svg'; // Set the path to your close image
@@ -153,6 +167,7 @@ function previewFile(file) {
     imgContainer.appendChild(img);
     imgContainer.appendChild(fileNameContainer); // Append file name container
     imgContainer.appendChild(closeButton);
+   imgContainer.appendChild(loaderSVG); // 리사이징 완료 되면 삭제 해서 쓰세요.
 
     document.getElementById('gallery').appendChild(imgContainer);
     paragraphs.forEach(function (paragraph) {

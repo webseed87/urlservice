@@ -1,8 +1,10 @@
 @charset "utf-8";
 /* ========================
-폰트명 : suit
+폰트명 : suit 한글 폰트
 font-family: 'SUIT', sans-serif;
 굵기 : thin 100 / light 300 / regular 400 / medium 500 / bold 700 / black 900
+폰트명 : roboto 영문 폰트
+font-family: 'roboto', sans-serif;
 ======================== */
 @font-face {
 	font-family: 'SUIT';
@@ -48,4 +50,9 @@ font-family: 'SUIT', sans-serif;
 	font-family: 'SUIT';
 	font-weight: 900;
 	src: url('./SUIT-Heavy.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'roboto';
+	font-weight: 400;
+	src: url('./Roboto-Regular.woff') format('woff');
 }
