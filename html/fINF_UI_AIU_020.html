@@ -44,7 +44,6 @@
             </ul>
         </div>
     </header>
-    <!-- 모바일에서 안보여질 목록리스트는 클래스 list_none을 붙여주세요 -->
     <div class="content">
         <div class="container">
             <div class="search_warp">
@@ -68,7 +67,7 @@
 
             <table class="filter_list">
                 <colgroup>
-                    <!-- 보험사일때만 보여지는 컬럼은 클래스를 ins_list붙여주세요,개인일때만 보여지는 컬럼은 클래스를 other_list를 붙여주세요 -->
+                  <!-- 보험사일때만 보여지는 컬럼은 클래스를 ins_list붙여주세요,개인일때만 보여지는 컬럼은 클래스를 other_list를 붙여주세요 모바일에서 안보여질 목록리스트는 클래스 list_none을 붙여주세요 -->
                     <col width="7%" />
                     <col width="" />
                     <col width="30%" class="other_list" />
@@ -77,7 +76,6 @@
                     <col width="5%" class="list_none ins_list" />
                     <col width="7%" class="list_none ins_list" />
                     <col width="5%" class="list_none ins_list" />
-
                     <col width="12%" class="list_none" />
                 </colgroup>
                 <thead>
@@ -90,20 +88,33 @@
                         <th class="list_none ins_list">사진 수</th>
                         <th class="list_none ins_list">담보</th>
                         <th class="list_none ins_list">서열</th>
-                        <th class="list_none">신청 일시</th>
+                        <th >신청 일시</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>9</td>
-                        <td><a href="fINF_UI_AIU_030.html">테스트 준비중입니다, 타이틀은 필수 값입니다.</a> </td>
+                        <!-- 모바일에서 제목이 특정 길이 이상일때 글자를 줄여서 표시 하려면 <span class="text-overflow-ellipsis"></span>를 붙여서 사용해주세요 -->
+                        <td><span class="text-overflow-ellipsis"><a href="fINF_UI_AIU_030.html">테스트 준비중입니다,  타이틀은 필수 값입니다.</span> </td>
                         <td class="other_list">메모입니다 메모입니다.</td>
                         <td class="ins_list">23134123412313</td>
                         <td class="ins_list">11가1111</td>
                         <td class="list_none ins_list">5</td>
                         <td class="list_none ins_list">자차</td>
                         <td class="list_none ins_list">2</td>
-                        <td class="list_none">2024.01.03 13:55:31</td>
+                         <!-- 모바일에서 날짜를 일까지만 표시하려면 <span class="date-overflow-hidden"> 2024.01.03 13:55</span>를 붙여서 사용해주세요 -->
+                        <td><span class="date-overflow-hidden"> 2024.01.03 13:55</span></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><p class="text-overflow-ellipsis"><a href="fINF_UI_AIU_030.html">테스트 준비중입니다.</p> </td>
+                        <td class="other_list">메모입니다 메모입니다.</td>
+                        <td class="ins_list">23134123412313</td>
+                        <td class="ins_list">11가1111</td>
+                        <td class="list_none ins_list">5</td>
+                        <td class="list_none ins_list">자차</td>
+                        <td class="list_none ins_list">2</td>
+                        <td ><span class="date-overflow-hidden"> 2024.01.03 13:55</span></td>
                     </tr>
 
 
@@ -125,6 +136,29 @@
         <img src="../assets/images/b_logo.svg" alt="보험개발원">
         <p>Copyright © AOS AI Model Service All rights reserved.</p>
     </footer>
+    <script>
+    //개인정보 토큰값에 따라 리스트 다르게 보이게하는 기능
+    //미선씨 참고용 함수이기 때문에 이 부분은 필요하면 쓰시고 아니면 삭제하세요
+    var userTypeSelect = $('#userType');
+    var table = $('.filter_list');
+    function toggleColumnVisibility(className, show) {
+        var columns = table.find('.' + className);
+        columns.css('display', show ? '' : 'none');
+    }
+    function handleUserTypeChange() {
+        var selectedValue = userTypeSelect.val();
+        if (selectedValue === 'agency') {
+            toggleColumnVisibility('ins_list', true);
+            toggleColumnVisibility('other_list', false);
+        } else {
+            toggleColumnVisibility('ins_list', false);
+            toggleColumnVisibility('other_list', true);
+
+        }
+    }
+    handleUserTypeChange();
+    userTypeSelect.on('change', handleUserTypeChange);
+    </script>
 </body>
 
 </html>

@@ -144,27 +144,7 @@
                         </div>
                     </div>
                 </div>
-                <script>
-                    var sliderThumbnail = new Swiper('.slider-thumbnail', {
-                        slidesPerView: 'auto',
-                        freeMode: true,
-                        watchSlidesVisibility: true,
-                        watchSlidesProgress: true,
-                        touchRatio: 0,
-                        
-                    });
-
-                    var slider = new Swiper('.slider', {
-                        navigation: {
-                            nextEl: '.swiper-button-next',
-                            prevEl: '.swiper-button-prev',
-                        },
-                        thumbs: {
-                            swiper: sliderThumbnail
-                        },
-
-                    });
-                </script>
+            
                 
             </div>
             <div class="standard_chart">
@@ -192,9 +172,9 @@
                 <h5>수리차 정보</h5>
                 <div class="info_contents">
                     <ul>
-                        <li><label>차량번호</label><input type="text" disabled value="11가 1111"></li>
-                        <li><label>차량명</label><input type="text"  disabled value="k5"></li>
-                        <li><label>모델명</label><input type="text" disabled value="가솔린"></li>
+                        <li class="three"><label>차량번호</label><input type="text" disabled value="11가 1111"></li>
+                        <li class="three"><label >차량명</label><input type="text"  disabled value="k5"></li>
+                        <li class="three"><label >모델명</label><input type="text" disabled value="가솔린"></li>
                         <li class="four"><label>최초등록일자</label><input type="date" disabled value="2024-02-28"> </li>
                         <li class="four"><label>부품적용일자</label><input type="date" required></li>
                         <li class="four"><label>사고일자</label><input type="date" required> </li>
@@ -208,7 +188,7 @@
                 <h5>공임</h5>
                 <div class="info_contents">
                     <ul>
-                        <li class="two"><label>탈부착 작업</label><input type="text" required class="wh100"></li>
+                        <li ><label>탈부착 작업</label><input type="text" required class="wh100"></li>
                         <li class="two"><label>도장작업</label><input type="text"><input type="text" class="ml5" required>
                         </li>
                         <li><label>도장칼라</label><input type="text" required></li>
@@ -253,7 +233,6 @@
                 <h5>작업항목</h5>
 
                 <div class="work_list">
-                    <p class="top"> <span>작업항목: 도장</span><span>금액:170,000</span></p>
                     <table>
 
                         <thead>
@@ -287,8 +266,9 @@
                             </tr>
                         </tbody>
                     </table>
-
                 </div>
+                <p class="top"> <span>작업항목: 도장</span><span>금액:170,000</span></p>
+
 
             </div>
         </div>
@@ -303,6 +283,28 @@
 
         </div>
     </div>
+        <!-- 스와이프 배너는 여기서만 사용하기 때문에 html 파일 안에 넣어놨습니다, 따로 빼서 쓰셔도 됩니다. -->
+        <script>
+            var sliderThumbnail = new Swiper('.slider-thumbnail', {
+                slidesPerView: 'auto',
+                freeMode: true,
+                watchSlidesVisibility: true,
+                watchSlidesProgress: true,
+                touchRatio: 0,
+                
+            });
+
+            var slider = new Swiper('.slider', {
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                thumbs: {
+                    swiper: sliderThumbnail
+                },
+
+            });
+        </script>
 </body>
 
 </html>

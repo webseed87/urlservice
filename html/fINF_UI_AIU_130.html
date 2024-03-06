@@ -50,7 +50,7 @@
 
             </div>
             <table class="standard_list">
-
+                  <!-- 보험사일때만 보여지는 컬럼은 클래스를 ins_list붙여주세요,개인일때만 보여지는 컬럼은 클래스를 other_list를 붙여주세요 모바일에서 안보여질 목록리스트는 클래스 list_none을 붙여주세요 -->
                 <thead>
                     <tr>
                         <th>No.</th>
@@ -59,7 +59,7 @@
                         <th>모델</th>
                         <th>탈부착 작업구분</th>
                         <th>도장작업구분</th>
-                        <th>사진수</th>
+                        <th class="list_none">사진수</th>
                         <th>신청일시</th>
                     </tr>
                 </thead>
@@ -71,8 +71,9 @@
                         <td>가솔린2.0</td>
                         <td>18국토부</td>
                         <td>18국토부</td>
-                        <td>5</td>
-                        <td>2024.01.03 13:55:31</td>
+                        <td class="list_none">5</td>
+                      <!-- 모바일에서 날짜를 일까지만 표시하려면 <span class="date-overflow-hidden"> 2024.01.03 13:55</span>를 붙여서 사용해주세요 -->
+                        <td><span class="date-overflow-hidden"> 2024.01.03 13:55</span></td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -81,8 +82,8 @@
                         <td>가솔린2.0</td>
                         <td>18국토부</td>
                         <td>18국토부</td>
-                        <td>5</td>
-                        <td>2024.01.03 13:55:31</td>
+                        <td class="list_none">5</td>
+                        <td><span class="date-overflow-hidden"> 2024.01.03 13:55</span></td>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -91,8 +92,8 @@
                         <td>가솔린2.0</td>
                         <td>18국토부</td>
                         <td>18국토부</td>
-                        <td>5</td>
-                        <td>2024.01.03 13:55:31</td>
+                        <td class="list_none">5</td>
+                        <td><span class="date-overflow-hidden"> 2024.01.03 13:55</span></td>
                     </tr>
                 </tbody>
             </table>

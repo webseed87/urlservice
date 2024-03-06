@@ -68,7 +68,7 @@
                     <col width="7%" class="list_none " />
                     <col width="5%" class="list_none " />
 
-                    <col width="12%" class="list_none" />
+                    <col width="12%"  />
                 </colgroup>
                 <thead>
                     <tr>
@@ -79,21 +79,32 @@
                         <th class="list_none ">사진 수</th>
                         <th class="list_none ">담보</th>
                         <th class="list_none ">서열</th>
-                        <th class="list_none">신청 일시</th>
+                        <th >신청 일시</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>9</td>
-                        <td><a href="fINF_UI_AIU_100.html">테스트 준비중입니다, 타이틀은 필수 값입니다.</a> </td>
-                        <td >23134123412313</td>
-                        <td >11가1111</td>
-                        <td class="list_none">5</td>
-                        <td class="list_none">자차</td>
-                        <td class="list_none ">2</td>
-                        <td class="list_none">2024.01.03 13:55:31</td>
+                        <!-- 모바일에서 제목이 특정 길이 이상일때 글자를 줄여서 표시 하려면 <span class="text-overflow-ellipsis"></span>를 붙여서 사용해주세요 -->
+                        <td><span class="text-overflow-ellipsis"><a href="fINF_UI_AIU_100.html">테스트 준비중입니다,  타이틀은 필수 값입니다.</span> </td>
+                        <td class="ins_list">23134123412313</td>
+                        <td class="ins_list">11가1111</td>
+                        <td class="list_none ins_list">5</td>
+                        <td class="list_none ins_list">자차</td>
+                        <td class="list_none ins_list">2</td>
+                         <!-- 모바일에서 날짜를 일까지만 표시하려면 <span class="date-overflow-hidden"> 2024.01.03 13:55</span>를 붙여서 사용해주세요 -->
+                        <td><span class="date-overflow-hidden"> 2024.01.03 13:55</span></td>
                     </tr>
-
+                    <tr>
+                        <td>8</td>
+                        <td><p class="text-overflow-ellipsis"><a href="fINF_UI_AIU_100.html">테스트 준비중입니다.</p> </td>
+                        <td class="ins_list">23134123412313</td>
+                        <td class="ins_list">11가1111</td>
+                        <td class="list_none ins_list">5</td>
+                        <td class="list_none ins_list">자차</td>
+                        <td class="list_none ins_list">2</td>
+                        <td ><span class="date-overflow-hidden"> 2024.01.03 13:55</span></td>
+                    </tr>
 
                 </tbody>
             </table>
